@@ -1,4 +1,5 @@
-﻿using Pico.EventStream.Persistence;
+﻿using Pico.EventStream.Models;
+using Pico.EventStream.Persistence;
 
 namespace Pico.EventStream;
 
