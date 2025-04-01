@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream", "Pico.Ev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.LinQ.Extensions", "Pico.LinQ.Extensions\Pico.LinQ.Extensions.csproj", "{C0906A0D-9ABD-4721-B353-F4C8246E507F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream.Persistence", "Pico.EventStream.Persistence\Pico.EventStream.Persistence.csproj", "{2BF93569-16A5-4241-9D07-FB523A0E58D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream.Persistence.BlobStorage", "Pico.EventStream.Persistence.BlobStorage\Pico.EventStream.Persistence.BlobStorage.csproj", "{2BF93569-16A5-4241-9D07-FB523A0E58D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
