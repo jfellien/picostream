@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Pico.EventStream\Pico.EventStream.csproj" />
+    </ItemGroup>
+
 </Project>
