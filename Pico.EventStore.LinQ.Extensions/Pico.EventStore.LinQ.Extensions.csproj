@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Pico.EventStream\Pico.EventStream.csproj" />
+      <ProjectReference Include="..\Pico.EventStore\Pico.EventStore.csproj" />
     </ItemGroup>
 
 </Project>

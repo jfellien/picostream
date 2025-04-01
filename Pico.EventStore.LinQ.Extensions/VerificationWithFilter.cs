@@ -1,6 +1,6 @@
-using Pico.EventStream.Models;
+using Pico.EventStore.Models;
 
-namespace Pico.EventStream.LinQ.Extensions;
+namespace Pico.EventStore.LinQ.Extensions;
 
 /// <summary>
 /// Represents a domain event query system with an applied filter condition, allowing checks and queries

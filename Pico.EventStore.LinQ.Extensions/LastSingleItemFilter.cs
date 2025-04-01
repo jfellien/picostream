@@ -1,6 +1,6 @@
-using Pico.EventStream.Models;
+using Pico.EventStore.Models;
 
-namespace Pico.EventStream.LinQ.Extensions;
+namespace Pico.EventStore.LinQ.Extensions;
 
 /// <summary>
 /// Provides a method to retrieve the last domain event of a specific type from a stream of events

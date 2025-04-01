@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream", "Pico.EventStream\Pico.EventStream.csproj", "{733EDDCD-2015-4852-93DB-7CDAAA99955A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStore", "Pico.EventStore\Pico.EventStore.csproj", "{733EDDCD-2015-4852-93DB-7CDAAA99955A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream.LinQ.Extensions", "Pico.EventStream.LinQ.Extensions\Pico.EventStream.LinQ.Extensions.csproj", "{C0906A0D-9ABD-4721-B353-F4C8246E507F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStore.LinQ.Extensions", "Pico.EventStore.LinQ.Extensions\Pico.EventStore.LinQ.Extensions.csproj", "{C0906A0D-9ABD-4721-B353-F4C8246E507F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream.Persistence.Azure.BlobStorage", "Pico.EventStream.Persistence.Azure.BlobStorage\Pico.EventStream.Persistence.Azure.BlobStorage.csproj", "{2BF93569-16A5-4241-9D07-FB523A0E58D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStore.Persistence.Azure.BlobStorage", "Pico.EventStore.Persistence.Azure.BlobStorage\Pico.EventStore.Persistence.Azure.BlobStorage.csproj", "{2BF93569-16A5-4241-9D07-FB523A0E58D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F3CA552F-E747-4E8E-9378-1CE4A43F2047}"
 EndProject

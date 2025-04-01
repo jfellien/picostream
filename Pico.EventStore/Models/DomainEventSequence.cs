@@ -1,4 +1,4 @@
-namespace Pico.EventStream.Models;
+namespace Pico.EventStore.Models;
 
 public class DomainEventSequence : List<SequencedDomainEvent>
 {

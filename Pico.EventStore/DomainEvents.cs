@@ -1,7 +1,7 @@
-﻿using Pico.EventStream.Models;
-using Pico.EventStream.Persistence;
+﻿using Pico.EventStore.Models;
+using Pico.EventStore.Persistence;
 
-namespace Pico.EventStream;
+namespace Pico.EventStore;
 
 /// <summary>
 /// Represents a stream of domain events specific to a context, entity, and entity ID,

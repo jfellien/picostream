@@ -1,6 +1,6 @@
-﻿using Pico.EventStream.Models;
+﻿using Pico.EventStore.Models;
 
-namespace Pico.EventStream.Persistence;
+namespace Pico.EventStore.Persistence;
 
 /// <summary>
 /// Defines an interface for reading and writing domain events in a persistent store,

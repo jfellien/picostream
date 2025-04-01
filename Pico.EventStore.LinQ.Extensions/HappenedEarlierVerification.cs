@@ -1,6 +1,6 @@
-using Pico.EventStream.Models;
+using Pico.EventStore.Models;
 
-namespace Pico.EventStream.LinQ.Extensions;
+namespace Pico.EventStore.LinQ.Extensions;
 
 /// <summary>
 /// Represents a mechanism to check whether a domain event of type <typeparamref name="TLater"/>

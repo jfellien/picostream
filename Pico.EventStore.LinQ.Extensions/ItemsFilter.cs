@@ -1,6 +1,6 @@
-using Pico.EventStream.Models;
+using Pico.EventStore.Models;
 
-namespace Pico.EventStream.LinQ.Extensions;
+namespace Pico.EventStore.LinQ.Extensions;
 
 /// <summary>
 /// Provides a mechanism to filter and retrieve domain events of type TSource from a stream of events.
