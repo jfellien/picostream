@@ -7,7 +7,7 @@ namespace Pico.EventStore;
 /// Represents a stream of domain events specific to a context, entity, and entity ID,
 /// with functionality to append and retrieve events in an organized manner.
 /// </summary>
-public class DomainEvents
+public class EventStream
 {
     private readonly string _context;
     private readonly string _entity;
@@ -19,7 +19,7 @@ public class DomainEvents
     /// <summary>
     /// Represents a stream of domain events associated with a specific context, entity, and entity ID.
     /// </summary>
-    public DomainEvents(string context, string entity, string entityId, IReadAndWriteDomainEvents storage)
+    public EventStream(string context, string entity, string entityId, IReadAndWriteDomainEvents storage)
     {
         _context = context;
         _entity = entity;
@@ -28,7 +28,42 @@ public class DomainEvents
 
         _historySequence = [];
     }
+    
+    /// <summary>
+    /// Retrieves the current stream of domain events, combining stored events and any newly appended in-memory events if present.
+    /// </summary>
+    /// <returns>An asynchronous task that resolves to a collection of domain events.</returns>
+    public async Task<DomainEvents> Events()
+    {
+        DomainEvents domainEvents = [];
+        
+        if (_historySequence.HasBeenSequenced)
+        {
+            domainEvents.AddRange(_historySequence.Select(x => x.Instance));
+            
+            return domainEvents;
+        }
 
+        DomainEventSequence storedSequence = await GetFromStorageByGivenParameters();
+
+        if (_historySequence.Any())
+        {
+            List<SequencedDomainEvent> currentSequence = _historySequence.ToList();
+            _historySequence.Clear();
+
+            _historySequence.AddRange(storedSequence);
+            _historySequence.AddRange(currentSequence);
+        }
+        else
+        {
+            _historySequence = storedSequence;
+        }
+
+        domainEvents.AddRange(_historySequence.Select(x => x.Instance));
+            
+        return domainEvents;
+    }
+    
     /// <summary>
     /// Adds a single domain event to the current stream and persists it to storage.
     /// </summary>
@@ -66,7 +101,7 @@ public class DomainEvents
     /// </summary>
     /// <param name="domainEvents">The collection of domain events to append to the stream.</param>
     /// <returns>A task representing the asynchronous append operation.</returns>
-    public Task Append(IEnumerable<IDomainEvent> domainEvents)
+    private Task Append(IEnumerable<IDomainEvent> domainEvents)
     {
         return WriteToStorageAndLocalHistory(domainEvents, _context, _entity, _entityId);
     }
@@ -82,7 +117,7 @@ public class DomainEvents
     /// Thrown when the provided entityId is different from the entityId already associated
     /// with this instance of the domain events stream.
     /// </exception>
-    public Task Append(IEnumerable<IDomainEvent> domainEvents, string entityId)
+    private Task Append(IEnumerable<IDomainEvent> domainEvents, string entityId)
     {
         if (string.IsNullOrWhiteSpace(entityId))
         {
@@ -99,36 +134,7 @@ public class DomainEvents
 
         return WriteToStorageAndLocalHistory(domainEvents, _context, _entity, entityId);
     }
-
-    /// <summary>
-    /// Retrieves the current stream of domain events, combining stored events and any newly appended in-memory events if present.
-    /// </summary>
-    /// <returns>An asynchronous task that resolves to a collection of domain events.</returns>
-    public async Task<IEnumerable<IDomainEvent>> Events()
-    {
-        if (_historySequence.HasBeenSequenced)
-        {
-            return _historySequence.Select(x => x.Instance);
-        }
-
-        DomainEventSequence storedSequence = await GetFromStorageByGivenParameters();
-
-        if (_historySequence.Any())
-        {
-            List<SequencedDomainEvent> currentSequence = _historySequence.ToList();
-            _historySequence.Clear();
-
-            _historySequence.AddRange(storedSequence);
-            _historySequence.AddRange(currentSequence);
-        }
-        else
-        {
-            _historySequence = storedSequence;
-        }
-
-        return _historySequence.Select(x => x.Instance);
-    }
-
+    
     /// <summary>
     /// Retrieves a sequence of domain events from storage based on the currently specified context, entity, and entity ID parameters.
     /// Determines the appropriate retrieval method based on the presence or absence of the entity and entity ID values.
