@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F3CA552F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{95A36244-4B70-4D0D-B44D-1FC4A6534763}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStream.Tests", "Pico.EventStream.Tests\Pico.EventStream.Tests.csproj", "{199F5269-2AAB-4505-8868-8A839D94D522}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pico.EventStore.Tests", "Pico.EventStore.Tests\Pico.EventStore.Tests.csproj", "{199F5269-2AAB-4505-8868-8A839D94D522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
