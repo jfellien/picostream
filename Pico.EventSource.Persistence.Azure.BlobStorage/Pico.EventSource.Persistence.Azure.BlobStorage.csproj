@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Pico.EventSource\Pico.EventSource.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Azure.Identity" Version="1.13.2" />
+      <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.3" />
+    </ItemGroup>
+
+</Project>
