@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="386e5ece-ce1a-49c6-a929-4b512664179a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource.Persistence.Azure.BlobStorage/BlobStorageEventStoreClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource.Persistence.Azure.BlobStorage/Pico.EventSource.Persistence.Azure.BlobStorage.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource.Persistence.Azure.BlobStorage/StorageOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource.Tests/EventStoreTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/EventStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/Models/DomainEventHeader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/Models/DomainEventStream.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/Persistence/DomainEventEnvelope.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/Persistence/EventTypeResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pico.EventSource/Persistence/IReadAndWriteDomainEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/git_toolbox_blame.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PicoEventStore/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/EventStreamExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/EventStreamExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/FirstSingleItemFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/FirstSingleItemFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/HappenedEarlierVerification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/HappenedEarlierVerification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/HappenedLaterVerification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/HappenedLaterVerification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/LastSingleItemFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/LastSingleItemFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/Pico.EventStore.LinQ.Extensions.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/Pico.EventSource.LinQ.Extensions.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/Verification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/Verification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.LinQ.Extensions/VerificationWithFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.LinQ.Extensions/VerificationWithFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.Persistence.Azure.BlobStorage/Pico.EventStore.Persistence.Azure.BlobStorage.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource/Pico.EventSource.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.Tests/EventStreamTestSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.Tests/EventStreamTestSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.Tests/EventStreamTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.Tests/Pico.EventStore.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.Tests/Pico.EventSource.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore.Tests/SampleValueEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource.Tests/SampleValueEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/EventStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/DomainEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource/Models/DomainEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/DomainEventHeader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/DomainEventSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource/Models/DomainEventSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/DomainEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/IDomainEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource/Models/IDomainEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Models/SequencedDomainEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pico.EventSource/Models/SequencedDomainEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Persistence/IReadAndWriteDomainEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico.EventStore/Pico.EventStore.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PicoEventStore.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PicoEventSource.sln" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48ccfe25de404f1fbca97c3d017f4155148820/d3/bd7664c9/StorageSharedKeyPipelinePolicy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7963d2beb05f4e73a3774d3a0f11cd7bf82e00/37/7b3fe608/String.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f513a8256a3745a78178a651fa10459168238/28/66f5a36e/RequestFailedException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pico.EventSource.Tests/EventStoreTests.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2v7LXFwrLr3iuOwnJY9hlHbOgEL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;788e21e0-fa9d-4fe0-b44b-193704a38af1.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="386e5ece-ce1a-49c6-a929-4b512664179a" name="Changes" comment="" />
+      <created>1743491203137</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743491203137</updated>
+      <workItem from="1743491204243" duration="482000" />
+      <workItem from="1743491727376" duration="28499000" />
+      <workItem from="1743599334174" duration="9712000" />
+      <workItem from="1743610908836" duration="899000" />
+      <workItem from="1743612403085" duration="17613000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add initial solution and projects setup&#10;&#10;Created the solution file and added three projects: Pico.EventStream, Pico.LinQ.Extensions, and Pico.EventStream.Persistence targeting .NET 9.0. Included IDE and build-related gitignore files to manage project artifacts and configurations.">
+      <option name="closed" value="true" />
+      <created>1743491887675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743491887675</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add initial implementation for domain event streaming&#10;&#10;Introduced `DomainEvents` class and related components to handle domain event streams, including appending and retrieving events. Added foundational interfaces and classes such as `IDomainEvent`, `DomainEventSequence`, and `IReadAndWriteDomainEvents`. Also updated solution structure to reflect the new `Pico.EventStream.Persistence.BlobStorage` project.">
+      <option name="closed" value="true" />
+      <created>1743494904946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743494904946</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Organize domain event classes into a dedicated Models namespace.&#10;&#10;Moved domain event-related classes and interfaces to the `Pico.EventStream.Models` namespace for better structure and clarity. Added documentation to `IReadAndWriteDomainEvents` for improved usability and maintainability.">
+      <option name="closed" value="true" />
+      <created>1743496258345</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743496258345</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add LINQ extensions for processing domain event streams&#10;&#10;Introduced a new project, `Pico.EventStream.LinQ.Extensions`, providing LINQ-based utilities for filtering, verifying, and retrieving domain events in event streams. This includes classes like `Verification`, `ItemsFilter`, and various helper filters for first, last, and specific event queries, enhancing event stream query capabilities. Updated the solution file to include the new project.">
+      <option name="closed" value="true" />
+      <created>1743522599874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743522599874</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add initial test project for EventStream&#10;&#10;Created a new test project targeting .NET 9.0 with xUnit setup. Included necessary dependencies for running and collecting test coverage. Added a placeholder test class to scaffold future test implementations.">
+      <option name="closed" value="true" />
+      <created>1743522611586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743522611586</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Rename &quot;EventStream&quot; to &quot;EventStore&quot; across the solution.&#10;&#10;Updated namespaces, project names, and references to standardize &quot;EventStore&quot; branding. Adjusted test dependencies and project references accordingly to reflect the changes.">
+      <option name="closed" value="true" />
+      <created>1743523415483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743523415483</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor event filtering and stream handling mechanisms&#10;&#10;Replaced `AnyItemFilter` and `ItemsFilter` with streamlined extension methods in `EventStreamExtensions`. Renamed `DomainEvents` to `EventStream` and introduced a new `DomainEvents` model for improved handling. Updated method signatures and removed redundant functionality for clarity and simplicity.">
+      <option name="closed" value="true" />
+      <created>1743583720848</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743583720848</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Rename and extend EventStream tests for EventStore validation&#10;&#10;Renamed test project from `Pico.EventStream.Tests` to `Pico.EventStore.Tests` for consistency with the EventStore module. Added new tests to verify domain event ordering and introduced supporting classes like `SampleValueEvent` and `EventStreamTestSetup` for comprehensive coverage. Updated solution file to reflect these changes.">
+      <option name="closed" value="true" />
+      <created>1743585002718</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743585002718</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="75" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="75" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 15% 274/323" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Add initial solution and projects setup&#10;&#10;Created the solution file and added three projects: Pico.EventStream, Pico.LinQ.Extensions, and Pico.EventStream.Persistence targeting .NET 9.0. Included IDE and build-related gitignore files to manage project artifacts and configurations." />
+    <MESSAGE value="Add initial implementation for domain event streaming&#10;&#10;Introduced `DomainEvents` class and related components to handle domain event streams, including appending and retrieving events. Added foundational interfaces and classes such as `IDomainEvent`, `DomainEventSequence`, and `IReadAndWriteDomainEvents`. Also updated solution structure to reflect the new `Pico.EventStream.Persistence.BlobStorage` project." />
+    <MESSAGE value="Organize domain event classes into a dedicated Models namespace.&#10;&#10;Moved domain event-related classes and interfaces to the `Pico.EventStream.Models` namespace for better structure and clarity. Added documentation to `IReadAndWriteDomainEvents` for improved usability and maintainability." />
+    <MESSAGE value="Add LINQ extensions for processing domain event streams&#10;&#10;Introduced a new project, `Pico.EventStream.LinQ.Extensions`, providing LINQ-based utilities for filtering, verifying, and retrieving domain events in event streams. This includes classes like `Verification`, `ItemsFilter`, and various helper filters for first, last, and specific event queries, enhancing event stream query capabilities. Updated the solution file to include the new project." />
+    <MESSAGE value="Add initial test project for EventStream&#10;&#10;Created a new test project targeting .NET 9.0 with xUnit setup. Included necessary dependencies for running and collecting test coverage. Added a placeholder test class to scaffold future test implementations." />
+    <MESSAGE value="Rename &quot;EventStream&quot; to &quot;EventStore&quot; across the solution.&#10;&#10;Updated namespaces, project names, and references to standardize &quot;EventStore&quot; branding. Adjusted test dependencies and project references accordingly to reflect the changes." />
+    <MESSAGE value="Refactor event filtering and stream handling mechanisms&#10;&#10;Replaced `AnyItemFilter` and `ItemsFilter` with streamlined extension methods in `EventStreamExtensions`. Renamed `DomainEvents` to `EventStream` and introduced a new `DomainEvents` model for improved handling. Updated method signatures and removed redundant functionality for clarity and simplicity." />
+    <MESSAGE value="Rename and extend EventStream tests for EventStore validation&#10;&#10;Renamed test project from `Pico.EventStream.Tests` to `Pico.EventStore.Tests` for consistency with the EventStore module. Added new tests to verify domain event ordering and introduced supporting classes like `SampleValueEvent` and `EventStreamTestSetup` for comprehensive coverage. Updated solution file to reflect these changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename and extend EventStream tests for EventStore validation&#10;&#10;Renamed test project from `Pico.EventStream.Tests` to `Pico.EventStore.Tests` for consistency with the EventStore module. Added new tests to verify domain event ordering and introduced supporting classes like `SampleValueEvent` and `EventStreamTestSetup` for comprehensive coverage. Updated solution file to reflect these changes." />
+  </component>
+</project>
