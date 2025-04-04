@@ -35,12 +35,19 @@ Temporary Items
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/*.code-snippets
 *.code-workspace
 !.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
 
+# Built Visual Studio Code Extensions
+*.vsix
+
+# JetBrains Rider
+*.sln.iml
+.DS_Store
 # Built Visual Studio Code Extensions
 *.vsix
 
