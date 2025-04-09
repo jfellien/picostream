@@ -50,6 +50,20 @@ public static class EventStreamExtensions
     }
 
     /// <summary>
+    /// Retrieves the last occurrence of a specified domain event type from the domain event stream.
+    /// </summary>
+    /// <param name="domainEventStream">The stream of domain events to search through, represented as an IEnumerable.</param>
+    /// <typeparam name="T">The type of the domain event to retrieve, which must implement <see cref="IDomainEvent"/>.</typeparam>
+    /// <exception cref="ArgumentNullException">source is null</exception>
+    /// <exception cref="InvalidOperationException">The source sequence is empty</exception>
+    /// <returns>The last instance of the specified domain event type present in the stream.</returns>
+    public static T LastItem<T>(this DomainEventStream domainEventStream)
+        where T : IDomainEvent
+    {
+        return domainEventStream.OfType<T>().Last();
+    }
+    
+    /// <summary>
     /// Retrieves a single event of the specified type from the domainEvents stream, ensuring there is only one such event.
     /// </summary>
     /// <param name="domainEventStream">The stream of domainEvents to search, represented as a <see cref="DomainEventStream"/> object.</param>

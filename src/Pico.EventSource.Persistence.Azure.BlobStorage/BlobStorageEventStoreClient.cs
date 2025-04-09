@@ -129,16 +129,15 @@ public class BlobStorageEventStoreClient : IReadAndWriteDomainEvents
             throw new ApplicationException("Stream has no value");
         }
 
-        JsonDocument? domainEvents = blob.Value.Content.ToObjectFromJson<JsonDocument>(SerializerOptions);
+        List<DomainEventEnvelope>? domainEvents = blob.Value.Content.ToObjectFromJson<List<DomainEventEnvelope>>(SerializerOptions);
 
         if (domainEvents == null) return [];
 
         DomainEventStream eventStream = [];
 
-        foreach (JsonElement x in domainEvents.RootElement.EnumerateArray())
+        foreach (DomainEventEnvelope eventEnvelope in domainEvents)
         {
-            IDomainEvent? y = x.Deserialize<IDomainEvent>(SerializerOptions);
-            eventStream.Add(y);
+            eventStream.Add(eventEnvelope.Event);
         }
         
         return eventStream;
