@@ -18,7 +18,7 @@ public static class EventStreamExtensions
     public static Verification<T> Verify<T>(this DomainEventStream domainEventStream)
         where T : IDomainEvent
     {
-        return new Verification<T>(domainEventStream);
+        return new Verification<T>(domainEventStream.Events);
     }
 
     /// <summary>
@@ -30,7 +30,7 @@ public static class EventStreamExtensions
     public static FirstSingleItemFilter<T> First<T>(this DomainEventStream domainEventStream)
         where T : IDomainEvent
     {
-        return new FirstSingleItemFilter<T>(domainEventStream);
+        return new FirstSingleItemFilter<T>(domainEventStream.Events);
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public static class EventStreamExtensions
     public static LastSingleItemFilter<T> Last<T>(this DomainEventStream domainEventStream)
         where T : IDomainEvent
     {
-        return new LastSingleItemFilter<T>(domainEventStream);
+        return new LastSingleItemFilter<T>(domainEventStream.Events);
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public static class EventStreamExtensions
     public static T LastItem<T>(this DomainEventStream domainEventStream)
         where T : IDomainEvent
     {
-        return domainEventStream.OfType<T>().Last();
+        return domainEventStream.Events.OfType<T>().Last();
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public static class EventStreamExtensions
     public static T? Single<T>(this DomainEventStream domainEventStream) 
         where T : IDomainEvent
     {
-        return domainEventStream.OfType<T>().SingleOrDefault();
+        return domainEventStream.Events.OfType<T>().SingleOrDefault();
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ public static class EventStreamExtensions
     public static T? Single<T>(this DomainEventStream domainEventStream, Func<T, bool> filterExpression)
         where T : IDomainEvent
     {
-        return domainEventStream.OfType<T>().SingleOrDefault(filterExpression);
+        return domainEventStream.Events.OfType<T>().SingleOrDefault(filterExpression);
     }
     
 }

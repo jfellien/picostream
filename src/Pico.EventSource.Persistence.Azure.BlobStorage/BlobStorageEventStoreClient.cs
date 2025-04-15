@@ -33,32 +33,32 @@ public class BlobStorageEventStoreClient : IReadAndWriteDomainEvents
         }
     }
 
-    public async Task<DomainEventStream> Read(string context, Guid streamId, CancellationToken ct)
+    public async Task<IEnumerable<IDomainEvent>> Read(ContextId contextId, StreamId streamId, CancellationToken ct)
     {
-        context = context.ToLowerInvariant();
+        string lowerContextId = contextId.Value.ToLowerInvariant();
         
-        BlobClient contextBlob = await GetBlob(context, streamId, ct);
+        BlobClient contextBlob = await GetBlob(lowerContextId, streamId.Value, ct);
 
         if (await contextBlob.ExistsAsync(ct) == false) return [];
 
-        DomainEventStream domainEventStream = await ReadDomainEventStream(contextBlob, ct);
+        IEnumerable<IDomainEvent> domainEvents = await ReadDomainEvents(contextBlob, ct);
 
-        return domainEventStream;
+        return domainEvents;
     }
 
-    public async Task Write(IDomainEvent domainEvent, string context, Guid streamId, CancellationToken ct)
+    public async Task Write(IDomainEvent domainEvent, ContextId contextId, StreamId streamId, CancellationToken ct)
     {
-        context = context.ToLowerInvariant();
+        string lowerContextId = contextId.Value.ToLowerInvariant();
         
-        BlobClient contextBlob = await GetBlob(context, streamId, ct);
+        BlobClient contextBlob = await GetBlob(lowerContextId, streamId.Value, ct);
 
         List<DomainEventEnvelope> domainEventStream = await ReadDomainEventEnvelopes(contextBlob, ct);
 
         DomainEventEnvelope envelope = new()
         {
             TimeStamp = DateTimeOffset.UtcNow,
-            Context = context,
-            StreamId = streamId,
+            Context = contextId.Value,
+            StreamId = streamId.Value,
             EventId = Guid.NewGuid(),
             Event = domainEvent
         };
@@ -70,11 +70,11 @@ public class BlobStorageEventStoreClient : IReadAndWriteDomainEvents
         await contextBlob.UploadAsync(binaryEventStream, OVERWRITE_BLOB, ct);
     }
     
-    private async Task<BlobClient> GetBlob(string context, Guid streamId, CancellationToken ct)
+    private async Task<BlobClient> GetBlob(string context, string streamId, CancellationToken ct)
     {
         BlobContainerClient client = await GetContextContainer(context, ct);
 
-        return client.GetBlobClient(streamId.ToString());
+        return client.GetBlobClient(streamId);
     }
 
     private async Task<BlobContainerClient> GetContextContainer(string context, CancellationToken ct)
@@ -118,7 +118,7 @@ public class BlobStorageEventStoreClient : IReadAndWriteDomainEvents
             : new BlobServiceClient(_storageEndpoint, new DefaultAzureCredential());
     }
 
-    private static async Task<DomainEventStream> ReadDomainEventStream(BlobClient blobClient, CancellationToken ct)
+    private static async Task<IEnumerable<IDomainEvent>> ReadDomainEvents(BlobClient blobClient, CancellationToken ct)
     {
         if(await blobClient.ExistsAsync(ct) == false) return [];
         
@@ -133,7 +133,7 @@ public class BlobStorageEventStoreClient : IReadAndWriteDomainEvents
 
         if (domainEvents == null) return [];
 
-        DomainEventStream eventStream = [];
+        List<IDomainEvent> eventStream = [];
 
         foreach (DomainEventEnvelope eventEnvelope in domainEvents)
         {
