@@ -15,7 +15,7 @@ public static class EventStreamExtensions
     /// <param name="domainEventStream">The stream of events to analyze, represented as an IEnumerable.</param>
     /// <typeparam name="T">The type of domain events to verify within the stream, which must implement <see cref="IDomainEvent"/>.</typeparam>
     /// <returns>A <see cref="Verification{T}"/> object that provides mechanisms to check for the occurrence, order, or other properties of domain events of the specified type.</returns>
-    public static Verification<T> Verify<T>(this DomainEventStream domainEventStream)
+    public static Verification<T> VerifyIf<T>(this DomainEventStream domainEventStream)
         where T : IDomainEvent
     {
         return new Verification<T>(domainEventStream.Events);
