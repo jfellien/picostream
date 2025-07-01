@@ -7,13 +7,12 @@ namespace Pico.EventSource.Tests;
 
 public class EventStoreTests : EventStreamTestSetup
 {
-    private const string CONTEXT = "TestContext";
+    private readonly ContextId _context = new ContextId("TestContext");
+    private readonly StreamId _streamId = new StreamId("TestStream");
     
     [Fact]
     public async Task HappenedEarlierThan_Should_Be_True()
     {
-        Guid streamId = Guid.NewGuid();
-        
         EventStore sut = new(Storage!);
         
         SampleValueEvent firstSampleEvent = new()
@@ -25,12 +24,12 @@ public class EventStoreTests : EventStreamTestSetup
             SampleValue   = "MySecondValue"
         };
         
-        await sut.Append(firstSampleEvent, CONTEXT, streamId);
-        await sut.Append(secondSampleEvent, CONTEXT, streamId);
+        await sut.Append(_context, _streamId, firstSampleEvent);
+        await sut.Append(_context, _streamId, secondSampleEvent);
         
-        DomainEventStream eventStream = await sut.GetStream(CONTEXT, streamId);
+        DomainEventStream eventStream = await sut.GetStream(_context, _streamId);
 
-        eventStream.Verify<SampleValueEvent>()
+        eventStream.VerifyIf<SampleValueEvent>()
             .Where(x => x.SampleValue == firstSampleEvent.SampleValue)
             .HappenedEarlierThan<SampleValueEvent>()
             .Where(x=>x.SampleValue == secondSampleEvent.SampleValue)
@@ -53,12 +52,12 @@ public class EventStoreTests : EventStreamTestSetup
             SampleValue   = "MySecondValue"
         };
         
-        await sut.Append(firstSampleEvent, CONTEXT, streamId);
-        await sut.Append(secondSampleEvent, CONTEXT, streamId);
+        await sut.Append(_context, _streamId,firstSampleEvent);
+        await sut.Append(_context, _streamId, secondSampleEvent);
         
-        DomainEventStream eventStream = await sut.GetStream(CONTEXT, streamId);
+        DomainEventStream eventStream = await sut.GetStream(_context, _streamId);
 
-        eventStream.Verify<SampleValueEvent>()
+        eventStream.VerifyIf<SampleValueEvent>()
             .Where(x => x.SampleValue == secondSampleEvent.SampleValue)
             .HappenedEarlierThan<SampleValueEvent>()
             .Where(x=>x.SampleValue == firstSampleEvent.SampleValue)

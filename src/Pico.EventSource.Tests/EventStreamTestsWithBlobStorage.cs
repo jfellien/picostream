@@ -9,9 +9,10 @@ namespace Pico.EventSource.Tests;
 
 public class EventStreamTestsWithBlobStorage
 {
-    private const string CONTEXT = "TestContext";
+    private readonly ContextId _context = new ContextId("TestContext");
+    private readonly StreamId _streamId = new StreamId("TestStream");
+    
     private readonly IReadAndWriteDomainEvents _repository;
-    private readonly Guid _streamId = Guid.Parse("56a59926-5300-441d-802c-cf8e4872ef5e");
     
     public EventStreamTestsWithBlobStorage()
     {
@@ -29,10 +30,10 @@ public class EventStreamTestsWithBlobStorage
     {
         EventStore sut = new(_repository);
 
-        await sut.Append(new SampleValueEvent()
+        await sut.Append(_context, _streamId, new SampleValueEvent()
         {
             SampleValue   = "MyFirstValue"
-        }, CONTEXT, _streamId);
+        });
     }
     
     [Fact]
@@ -40,13 +41,13 @@ public class EventStreamTestsWithBlobStorage
     {
         EventStore sut = new(_repository);
 
-        await sut.Append(new SampleValueEvent()
+        await sut.Append(_context, _streamId, new SampleValueEvent()
         {
             SampleValue   = "MyFirstValue"
-        }, CONTEXT, _streamId);
+        });
         
-        DomainEventStream eventStream = await sut.GetStream(CONTEXT, _streamId);
+        DomainEventStream eventStream = await sut.GetStream(_context, _streamId);
         
-        eventStream.Count.ShouldBe(1);
+        eventStream.Events.Count.ShouldBe(1);
     }
 }
